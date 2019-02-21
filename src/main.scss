@@ -22,9 +22,11 @@
   padding: 10px;
 
   .sequencer {
-    padding: 20px;
+    flex: 1 1;
+    padding: 0px;
     margin: 20px;
-    border-radius: 20px;
+    border-radius: 10px;
+    background: #ffffff;
     border: 1px solid rgba(0,0,0,0.05);
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);
   }
@@ -34,6 +36,18 @@
     text-shadow: 2px 2px rgba(0,0,0,0.1);
   }
 
+  input {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 2px;
+    background: $base;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    &:focus {
+      box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.1);
+    }
+  }
  select {
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -53,12 +67,11 @@
     display: inline-block;
     cursor: pointer;
     padding: 8px;
+    color: $base;
     border-radius: 4px;
     font-weight: 600;
+    font-size: 30px;
     text-transform: uppercase;
-    background: $darker2;
-    border: 1px solid rgba(0,0,0,0.1);
-    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.3);
   }
   .icon-button {
     display: inline-block;
@@ -84,7 +97,7 @@
       transform: scale(1.5);
 
       .text {
-      position: absolute;
+        position: absolute;
         top: 18px;
         right: 120%;
         display: block;
