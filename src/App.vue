@@ -5,8 +5,9 @@
       <h2 style="margin-top: -20px; font-style: italic">(Roland Juno DS pattern sequencer tool)</h2>
       <h3>About</h3>
       <p>
-        Creates a mulitrack Midi file (smf0) and allows to resample it to fit into a
-        number of target bars.
+        Creates a mulitrack Midi file (smf1) 
+        and allows to bake multiple tracks into one singe track (smf0).
+        Also allows to resample midi files to fit number of target bars.
         Please read the corresponding article <a href="TODO" style="text-decoration: none">here</a>!
       <!--// p>Some DAWs (like ableton) cannot store midi files with per-event channel info.
       This tool merges events (noteOn, CV) of several midi (smf0) files into one midi (smf0) file
@@ -113,6 +114,7 @@ export default {
 
 h4 {
   margin-left: 30px;
+  text-align: center;
 }
 a, a:visited {
   color: $darker2;
@@ -121,17 +123,16 @@ a, a:visited {
   display: block;
   margin: auto;
   position: relative;
-  margin-top: -40px;
-  margin-bottom: 60px;
+  z-index:0;
+  text-align: center;
+  width: 100%;
+  margin: auto;
   .arrow {
-    width: 100%;
     position: absolute;
     color: $base;
-    display: block;
-    z-index: 1;
-    margin-top: -8px;
+    z-index: -1;
+    margin-top: -50px;
     font-weight: 800;
-    text-align: center;
     font-size: 60px;
   }
 }
