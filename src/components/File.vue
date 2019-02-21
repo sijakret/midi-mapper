@@ -61,9 +61,9 @@ export default {
     remove(index) {
       this.midi.remove(index);
     },
-    async save() {
+    async save(name = 'midi.mid') {
       const buffer = await this.midi.toBuffer('Multichannel');
-      download(buffer,'test.mid');
+      download(buffer,name);
       console.log(buffer, this.lastBuffer);
     },
     async drop(event, track) {

@@ -41,11 +41,15 @@
     </div>
     
     <div style="padding: 20px; flex: 1 1">
-      <h4>Drop tracks</h4>
+      <h4>Multichannel Midi (SMF1, multiple tracks)</h4>
       <midi-file 
+        ref="mixer"
         :num-tracks="4" 
         @input="newMix"
-        :assign-channel="true"/>
+        :assign-channel="true">
+        <i class="fas fa-file-download button" 
+          @click="$refs.mixer.save('smf1.mid')"></i>
+      </midi-file>
 
       <div class="pulse">
         <transition name="pulse">
@@ -53,11 +57,12 @@
         </transition>
       </div>
 
-      <h4>Adjust target limits</h4>
+      <h4>Multichannel Midi (SMF0, single track)</h4>
       <midi-file 
         ref="out"
         :num-tracks="1">
-        <i class="fas fa-file-download button"></i>
+        <i class="fas fa-file-download button"
+          @click="$refs.out.save('smf0.mid')"></i>
       </midi-file>
 
       <div class="pulse">
@@ -116,7 +121,8 @@ a, a:visited {
   display: block;
   margin: auto;
   position: relative;
-  height: 1px;
+  margin-top: -40px;
+  margin-bottom: 60px;
   .arrow {
     width: 100%;
     position: absolute;
